@@ -77,3 +77,4 @@ The following public dependencies were actively used in this project.
 ### Development
 - [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/1.5.16.RELEASE/reference/html/using-boot-devtools.html): Tooling for more pleasant development experience
 - [Lombok](https://projectlombok.org): Reduces boilerplate code
+- [JUnit](https://junit.org/): Testing
