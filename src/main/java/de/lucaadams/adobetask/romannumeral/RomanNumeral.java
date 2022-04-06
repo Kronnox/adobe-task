@@ -24,6 +24,10 @@ public class RomanNumeral {
     @Getter
     private final short value;
 
+    /**
+     * Value object that wraps a short number to convert it as a roman numeral.
+     * @param value the actual number value
+     */
     public RomanNumeral(short value) {
         // Check for input values out of the specified and supported range
         if (value < 1 || value > 255) {
@@ -33,12 +37,21 @@ public class RomanNumeral {
         this.value = value;
     }
 
+    /**
+     * Returns input value and conversion output as a roman numeral as a {@link ConversionResult}
+     * @return the corresponding {@link ConversionResult} object
+     */
     public ConversionResult getConvertedResult() {
         // Create a returnable ConversionResult from input and converted translation
         // In combination with Jackson this guarantees the desired JSON schema
         return new ConversionResult(String.valueOf(value), getValueAsRomanNumeral(value));
     }
 
+    /**
+     * Converts a number into it's roman numeral
+     * @param value the actual number value
+     * @return roman numeral translation as a {@link String}
+     */
     private String getValueAsRomanNumeral(int value) {
         // Get entry from translation map that is equal or smaller than the given number
         int closestNumber = ROMAN_NUMERAL_MAP.floorKey(value);
