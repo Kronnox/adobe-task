@@ -9,8 +9,22 @@ Instructions for starting and building the application.
 
 ### Starting the project
 
+#### Standalone with maven-wrapper
 Run `./mvnw spring-boot:run` using a bash terminal inside the project directory.
 
+#### Docker
+1) First build the docker image as explained below.
+2) Run `docker run --publish 8080:8080 adobe-task:latest`.
+
+### Building the project
+
+The project can either be build into an executable jar file with maven or directly into a docker image.
+
+#### Standalone with Maven
+Run `mvn clean package`.
+
+#### Docker
+Run `docker build --tag=adobe-task:latest .`
 
 ## Engineering methodology
 
