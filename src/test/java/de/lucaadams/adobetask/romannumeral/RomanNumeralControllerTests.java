@@ -55,6 +55,10 @@ public class RomanNumeralControllerTests {
         this.mockMvc.perform(get("/romannumeral?query=256"))
                 .andDo(print())
                 .andExpect(status().isBadRequest());
+
+        this.mockMvc.perform(get("/romannumeral?query=2147483648"))
+                .andDo(print())
+                .andExpect(status().isBadRequest());
     }
 
     @Test
